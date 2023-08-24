@@ -10,7 +10,7 @@ export default function Project() {
     }, []);
 
     const viewTools = () => {
-        axios.get('http://localhost:8081/issue/show')
+        axios.get('https://inventorygreenlanka.onrender.com/issue/show')
             .then((res) => {
                 if (res.data.success) {
                     // Aggregate items by project name and item code and calculate total quantity

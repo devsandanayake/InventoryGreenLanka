@@ -22,7 +22,7 @@ export default function Tool() {
   },[]);
 
     const viewTools = () => {
-        axios.get('http://localhost:8081/tools').then((res) => {
+        axios.get('https://inventorygreenlanka.onrender.com/tools').then((res) => {
             if(res.data.success){
                 setTool(res.data.existingTools);
                 console.log(tool);

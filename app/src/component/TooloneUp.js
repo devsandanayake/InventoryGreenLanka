@@ -13,7 +13,7 @@ export default function RepairEdit() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:8081/tools/${id}`).then((res) => {
+    axios.get(`https://inventorygreenlanka.onrender.com/tools/${id}`).then((res) => {
       if (res.data.success) {
         setPost(res.data.post);
         setUpdatedPost({
@@ -44,7 +44,7 @@ export default function RepairEdit() {
       qty: updatedPost.qty,
     };
 
-    axios.put(`http://localhost:8081/tool/update/${id}`, data).then((res) => {
+    axios.put(`https://inventorygreenlanka.onrender.com/tool/update/${id}`, data).then((res) => {
       console.log(res.data);
       alert('Post updated successfully!');
       setUpdatedPost({

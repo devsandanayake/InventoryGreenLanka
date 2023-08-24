@@ -22,7 +22,7 @@ export default function Mtems() {
   },[]);
 
     const viewTools = () => {
-        axios.get('http://localhost:8081/items').then((res) => {
+        axios.get('https://inventorygreenlanka.onrender.com/items').then((res) => {
             if(res.data.success){
                 setTool(res.data.items);
                 console.log(items);
@@ -49,7 +49,7 @@ export default function Mtems() {
       qty: qty,
     };
 
-    axios.post('http://localhost:8081/items/save', data).then((res) => {
+    axios.post('https://inventorygreenlanka.onrender.com/items/save', data).then((res) => {
       if (res.data.success) {
         setFormData({
           itemCode: '',

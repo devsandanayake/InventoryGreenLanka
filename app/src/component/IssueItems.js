@@ -14,7 +14,7 @@ export default function IssueItems() {
 
     const fetchItemCodes = async () => {
         try {
-            const response = await axios.get('http://localhost:8081/items');
+            const response = await axios.get('https://inventorygreenlanka.onrender.com/items');
             if (response.data.success) {
                 const codes = response.data.items.map((item) => item.itemCode);
                 setItemCodes(codes);
@@ -26,7 +26,7 @@ export default function IssueItems() {
 
     const fetchAvailableQuantity = async (itemCode) => {
         try {
-            const response = await axios.get(`http://localhost:8081/items/${itemCode}`);
+            const response = await axios.get(`https://inventorygreenlanka.onrender.com/items/${itemCode}`);
             if (response.data.success) {
                 const newAvailableQuantities = { ...availableQuantities };
                 newAvailableQuantities[itemCode] = response.data.item.qty;
@@ -63,7 +63,7 @@ export default function IssueItems() {
         }));
 
         try {
-            const response = await axios.post('http://localhost:8081/items/issue', itemsToIssue);
+            const response = await axios.post('https://inventorygreenlanka.onrender.com/items/issue', itemsToIssue);
             if (response.data.success) {
                 alert('Items issued successfully');
                 // Clear selectedItems array or perform any other necessary action
