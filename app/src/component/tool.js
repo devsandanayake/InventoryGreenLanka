@@ -49,7 +49,7 @@ export default function Tool() {
       qty: qty,
     };
 
-    axios.post('http://localhost:8081/tools/save', data).then((res) => {
+    axios.post('https://inventorygreenlanka.onrender.com/tools/save', data).then((res) => {
       if (res.data.success) {
         setFormData({
           toolCode: '',
