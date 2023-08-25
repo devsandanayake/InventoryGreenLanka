@@ -44,6 +44,7 @@ export default function Project() {
     return (
         <div>
             <div className='mt-5'>
+            <div className='text-5xl font-bold'>Project Issued Items</div>
                 <div className='mt-5'>
                     {isLoading ? (
                         <p>Loading...</p>

@@ -93,6 +93,21 @@ router.delete('/items/:id', async (req, res) => { // Change route to /items/:id
     }
 });
 
+router.get('/item/view/:id', async (req, res) => {
+    try {
+        const tool = await Item.findById(req.params.id).exec();
+        return res.status(200).json({
+            success: true,
+            post: tool
+        });
+    } catch (err) {
+        return res.status(400).json({
+            error: err
+        });
+    }
+});
+
+
  
 
 module.exports = router;

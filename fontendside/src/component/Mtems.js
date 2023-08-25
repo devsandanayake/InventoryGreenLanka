@@ -79,7 +79,7 @@ export default function Mtems() {
           </button>
           <button>
               <Link
-              to='/Updatetool' // Navigate to the StockUpdate component
+              to='/Updatemoveitems' // Navigate to the StockUpdate component
               className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
             >
             Stock Update</Link>
