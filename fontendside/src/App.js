@@ -4,7 +4,7 @@ import Sidebar from './component/Slidebar'     // import Home component
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import Tooloneup from './component/TooloneUp'
 import IssueItems from './component/IssueItems'
-export default function () {
+export default function App () {
   return (
     <div>
        <BrowserRouter>
