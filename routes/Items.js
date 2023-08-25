@@ -71,7 +71,7 @@ router.put('/items/:id', async (req, res) => { // Change route to /items/:id
     }
 });
 
-router.delete('/items/:id', async (req, res) => { // Change route to /items/:id
+router.delete('/items/detele/:id', async (req, res) => { // Change route to /items/:id
     try {
         const deletedItem = await Item.findByIdAndRemove(req.params.id).exec();
         

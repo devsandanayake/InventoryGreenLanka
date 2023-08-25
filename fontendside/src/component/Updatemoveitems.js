@@ -14,7 +14,7 @@ export default function Updatemoveitems() {
     const viewTools = () => {
         axios.get('https://inventorygreenlanka.onrender.com/items').then((res) => {
             if(res.data.success){
-                setTool(res.data.existingTools);
+                setTool(res.data.items);
                 console.log(tool);
             }
         });
@@ -36,7 +36,7 @@ export default function Updatemoveitems() {
   return (
     <>
    
-      <div className='text-5xl font-bold text-center'>Tool Update Page</div>
+      <div className='text-5xl font-bold text-center'>Move Items Update Page</div>
   
         <div className='mt-5'>
             <table className='table-auto w-full'>
@@ -53,8 +53,8 @@ export default function Updatemoveitems() {
                     {tool.map((tool,index)=>(
                         <tr key={index}>
                             <td className='border px-4 py-2'>{index + 1}</td>
-                            <td className='border px-4 py-2 font-bold'>{tool.toolCode}</td>
-                            <td className='border px-4 py-2'>{tool.toolName}</td>
+                            <td className='border px-4 py-2 font-bold'>{tool.itemCode}</td>
+                            <td className='border px-4 py-2'>{tool.itemName}</td>
                             <td className='border px-4 py-2'>{tool.qty}</td>
                             <td>
                        <a className='bg-yellow-500' href={`/MoveUp/${tool._id}`}>

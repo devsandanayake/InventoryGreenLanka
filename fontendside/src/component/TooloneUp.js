@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, useNavigate } from 'react-router-dom';
 
-export default function RepairEdit() {
+export default function TooloneUp() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState({});
@@ -52,7 +52,7 @@ export default function RepairEdit() {
         toolName: "",
         qty: "",
       });
-      navigate('/');
+      navigate('/Updatetool');
     });
   };
 
