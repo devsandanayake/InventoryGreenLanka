@@ -24,7 +24,7 @@ export default function Updatemoveitems() {
   
   //delete function
   const Tooldelete = (id)=>{
-    axios.delete(`https://inventorygreenlanka.onrender.com/items/delete/${id}`).then((res)=>{
+    axios.delete(`https://inventorygreenlanka.onrender.com/items/detele/${id}`).then((res)=>{
       alert("Deleted");
       viewTools();
     })
