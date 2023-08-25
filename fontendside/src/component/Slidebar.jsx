@@ -7,8 +7,8 @@ import img from "../img/Borcelle.png"
 import logo from "../img/GLEE_Logo.jpg"
 import {BsTools} from 'react-icons/bs';
 import {FaToolbox} from 'react-icons/fa'
-import {AiFillProfile , AiOutlineHome} from 'react-icons/ai'
-export default function App() {
+import {AiFillProfile , AiOutlineHome, AiOutlineLogout} from 'react-icons/ai'
+export default function Slidebar({ onLogout }) {
   
   const [activeComponent, setActiveComponent] = useState(null);
 
@@ -51,7 +51,7 @@ export default function App() {
         </button>
 
         <button className="w-60" onClick={() => handleComponentChange('project')}>
-          <div className='flex items-center rounded-md bg-red-600 mt-2'>
+          <div className='flex items-center rounded-md bg-blue-600 mt-2'>
           <div className='flex p-2'><AiFillProfile className='mr-3 text-xl'/>Projects</div>
           </div>
         </button>
@@ -61,7 +61,11 @@ export default function App() {
           <div className='flex p-2'><AiOutlineHome className='mr-3 text-xl'/>Home</div>
           </div>
         </button>
-
+        <button  onClick={onLogout} className='ml-16 mt-16'>
+        <div className='flex items-center rounded-md bg-red-800 mt-2'>
+          <div className='flex p-2 font-bold'><AiOutlineLogout className='mr-3 text-xl'/>Logout</div>
+          </div>
+        </button>
       
       </div>
 
