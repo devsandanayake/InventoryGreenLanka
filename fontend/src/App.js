@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+ import React from 'react'
+ import Updatetool from './component/Updatetool'
+ import Sidebar from './component/Slidebar'     // import Home component
+ import {BrowserRouter,Route,Routes} from 'react-router-dom'
+ import Tooloneup from './component/TooloneUp'
+ import IssueItems from './component/IssueItems'
+ export default function () {
+   return (
+     <div>
+        <BrowserRouter>
+      
+        
+        <Routes>
+            <Route path='/' element={<Sidebar/>}/>
+            <Route path="/Updatetool" element={<Updatetool/>}/>
+            <Route path="/TooloneUp/:id" element={<Tooloneup/>}/>
+            <Route path="/IssueItems" element={<IssueItems/>}/>
+          </Routes>
+        </BrowserRouter>
+     </div>
+   )
+ }
+ 
