@@ -38,6 +38,12 @@ export default function Slidebar({ onLogout }) {
             GLEE Admin
           </h1>
         </div>
+        <button className="w-60" onClick={handleSlideBack}>
+          <div className='flex items-center rounded-md bg-yellow-800 mt-2'>
+          <div className='flex p-2 text-2xl'><AiOutlineHome className='mr-3 text-2xl'/>Home</div>
+          </div>
+        </button>
+        
         <button className="w-60" onClick={() => handleComponentChange('tools')}>
           <div className='flex items-center rounded-md bg-blue-900 mt-2'>
             <div className="flex p-2 text-2xl"><BsTools className='mr-3 text-2xl'/>Tools</div>
@@ -56,11 +62,7 @@ export default function Slidebar({ onLogout }) {
           </div>
         </button>
 
-        <button className="w-60" onClick={handleSlideBack}>
-          <div className='flex items-center rounded-md bg-yellow-800 mt-2'>
-          <div className='flex p-2 text-2xl'><AiOutlineHome className='mr-3 text-2xl'/>Home</div>
-          </div>
-        </button>
+      
         <button  onClick={onLogout} className='ml-16 mt-16'>
         <div className='flex items-center rounded-md bg-red-800 mt-2'>
           <div className='flex p-2 font-bold text-2xl'><AiOutlineLogout className='mr-3 text-2xl'/>Logout</div>

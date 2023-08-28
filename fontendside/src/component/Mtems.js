@@ -93,29 +93,27 @@ export default function Mtems() {
           </button>
         </div>
         <div className='mt-5'>
-            <table className='table-auto w-full'>
-                <thead>
-                    <tr>
-                        <th className='border px-4 py-2 text-2xl'>Index</th>
-                        <th className='border px-4 py-2 text-2xl'>Tool Code</th>
-                        <th className='border px-4 py-2 text-2xl'>Tool Name</th>
-                        <th className='border px-4 py-2 text-2xl'>Quantity</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    {items.map((item,index)=>(
-                        <tr key={index}>
-                            <td className='border px-4 py-2 text-2xl'>{index + 1}</td>
-                            <td className='border px-4 py-2 font-bold text-2xl'>{item.itemCode}</td>
-                            <td className='border px-4 py-2 text-2xl'>{item.itemName}</td>
-                            <td className='border px-4 py-2 text-2xl'>{item.qty}</td>
-                           </tr>
+        <table className="table-auto w-full border-2">
+        <thead>
+          <tr className="bg-green-200">
+            <th className="border-2 px-4 py-2 text-2xl">Index</th>
+            <th className="border-2 px-4 py-2 text-2xl">Tool Code</th>
+            <th className="border-2 px-4 py-2 text-2xl">Tool Name</th>
+            <th className="border-2 px-4 py-2 text-2xl">Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((item, index) => (
+            <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-green-100'}>
+              <td className="border-2 px-4 py-2 text-2xl">{index + 1}</td>
+              <td className="border-2 px-4 py-2 font-bold text-2xl">{item.itemCode}</td>
+              <td className="border-2 px-4 py-2 text-2xl">{item.itemName}</td>
+              <td className="border-2 px-4 py-2 text-2xl">{item.qty}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-                    ))}
-                </tbody>
-                
-</table>
 </div>
       </div>
 
