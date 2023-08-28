@@ -96,20 +96,20 @@ export default function Mtems() {
             <table className='table-auto w-full'>
                 <thead>
                     <tr>
-                        <th className='border px-4 py-2'>Index</th>
-                        <th className='border px-4 py-2'>Tool Code</th>
-                        <th className='border px-4 py-2'>Tool Name</th>
-                        <th className='border px-4 py-2'>Quantity</th>
+                        <th className='border px-4 py-2 text-2xl'>Index</th>
+                        <th className='border px-4 py-2 text-2xl'>Tool Code</th>
+                        <th className='border px-4 py-2 text-2xl'>Tool Name</th>
+                        <th className='border px-4 py-2 text-2xl'>Quantity</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     {items.map((item,index)=>(
                         <tr key={index}>
-                            <td className='border px-4 py-2'>{index + 1}</td>
-                            <td className='border px-4 py-2 font-bold'>{item.itemCode}</td>
-                            <td className='border px-4 py-2'>{item.itemName}</td>
-                            <td className='border px-4 py-2'>{item.qty}</td>
+                            <td className='border px-4 py-2 text-2xl'>{index + 1}</td>
+                            <td className='border px-4 py-2 font-bold text-2xl'>{item.itemCode}</td>
+                            <td className='border px-4 py-2 text-2xl'>{item.itemName}</td>
+                            <td className='border px-4 py-2 text-2xl'>{item.qty}</td>
                            </tr>
 
                     ))}

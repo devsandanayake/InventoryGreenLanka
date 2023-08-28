@@ -52,20 +52,20 @@ export default function Project() {
                         <table className='table-auto w-full'>
                             <thead>
                                 <tr>
-                                    <th className='border px-4 py-2'>Project Name</th>
-                                    <th className='border px-4 py-2'>Item Code</th>
-                                    <th className='border px-4 py-2'>Total Quantity</th>
-                                    <th className='border px-4 py-2'>Data</th>
+                                    <th className='border px-4 py-2 text-2xl'>Project Name</th>
+                                    <th className='border px-4 py-2 text-2xl'>Item Code</th>
+                                    <th className='border px-4 py-2 text-2xl'>Total Quantity</th>
+                                    <th className='border px-4 py-2 text-2xl'>Data</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {issueItems && issueItems.length > 0 ? (
                                     issueItems.map((issue, index) => (
                                         <tr key={index}>
-                                            <td className='border px-4 py-2 font-bold'>{issue.projectName}</td>
-                                            <td className='border px-4 py-2'>{issue.itemCode}</td>
-                                            <td className='border px-4 py-2'>{issue.qty}</td>
-                                            <td className='border px-4 py-2'>{issue.issuedDate}</td>
+                                            <td className='border px-4 py-2 font-bold text-2xl'>{issue.projectName}</td>
+                                            <td className='border px-4 py-2 text-2xl'>{issue.itemCode}</td>
+                                            <td className='border px-4 py-2 text-2xl'>{issue.qty}</td>
+                                            <td className='border px-4 py-2 text-2xl'>{issue.issuedDate}</td>
                                         </tr>
                                     ))
                                 ) : (

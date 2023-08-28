@@ -40,30 +40,30 @@ export default function Slidebar({ onLogout }) {
         </div>
         <button className="w-60" onClick={() => handleComponentChange('tools')}>
           <div className='flex items-center rounded-md bg-blue-900 mt-2'>
-            <div className="flex p-2"><BsTools className='mr-3 text-xl'/>Tools</div>
+            <div className="flex p-2 text-2xl"><BsTools className='mr-3 text-2xl'/>Tools</div>
           </div>
         </button>
 
         <button className="w-60" onClick={() => handleComponentChange('mitem')}>
           <div className='flex items-center rounded-md bg-green-800 mt-2'>
-            <div className='flex p-2'><FaToolbox className='mr-3 text-xl'/>Move Items</div>
+            <div className='flex p-2 text-2xl'><FaToolbox className='mr-3 text-2xl'/>Move Items</div>
           </div>
         </button>
 
         <button className="w-60" onClick={() => handleComponentChange('project')}>
           <div className='flex items-center rounded-md bg-blue-600 mt-2'>
-          <div className='flex p-2'><AiFillProfile className='mr-3 text-xl'/>Projects</div>
+          <div className='flex p-2 text-2xl'><AiFillProfile className='mr-3 text-2xl'/>Projects</div>
           </div>
         </button>
 
         <button className="w-60" onClick={handleSlideBack}>
           <div className='flex items-center rounded-md bg-yellow-800 mt-2'>
-          <div className='flex p-2'><AiOutlineHome className='mr-3 text-xl'/>Home</div>
+          <div className='flex p-2 text-2xl'><AiOutlineHome className='mr-3 text-2xl'/>Home</div>
           </div>
         </button>
         <button  onClick={onLogout} className='ml-16 mt-16'>
         <div className='flex items-center rounded-md bg-red-800 mt-2'>
-          <div className='flex p-2 font-bold'><AiOutlineLogout className='mr-3 text-xl'/>Logout</div>
+          <div className='flex p-2 font-bold text-2xl'><AiOutlineLogout className='mr-3 text-2xl'/>Logout</div>
           </div>
         </button>
       

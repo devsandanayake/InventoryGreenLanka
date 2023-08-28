@@ -89,20 +89,20 @@ export default function Tool() {
             <table className='table-auto w-full'>
                 <thead>
                     <tr>
-                        <th className='border px-4 py-2'>Index</th>
-                        <th className='border px-4 py-2'>Tool Code</th>
-                        <th className='border px-4 py-2'>Tool Name</th>
-                        <th className='border px-4 py-2'>Quantity</th>
+                        <th className='border px-4 py-2 text-2xl'>Index</th>
+                        <th className='border px-4 py-2 text-2xl'>Tool Code</th>
+                        <th className='border px-4 py-2 text-2xl'>Tool Name</th>
+                        <th className='border px-4 py-2 text-2xl'>Quantity</th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     {tool.map((tool,index)=>(
                         <tr key={index}>
-                            <td className='border px-4 py-2'>{index + 1}</td>
-                            <td className='border px-4 py-2 font-bold'>{tool.toolCode}</td>
-                            <td className='border px-4 py-2'>{tool.toolName}</td>
-                            <td className='border px-4 py-2'>{tool.qty}</td>
+                            <td className='border px-4 py-2 '>{index + 1}</td>
+                            <td className='border px-4 py-2 font-bold text-2xl'>{tool.toolCode}</td>
+                            <td className='border px-4 py-2 text-2xl'>{tool.toolName}</td>
+                            <td className='border px-4 py-2 text-2xl'>{tool.qty}</td>
                            </tr>
 
                     ))}
