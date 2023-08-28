@@ -16,13 +16,14 @@ export default function IssueItems() {
         try {
             const response = await axios.get('https://inventorygreenlanka.onrender.com/items');
             if (response.data.success) {
-                const codes = response.data.items.map((item) => item.itemCode);
-                setItemCodes(codes);
+                const items = response.data.items;
+                setItemCodes(items);
             }
         } catch (error) {
             console.error('Error fetching item codes:', error);
         }
     };
+    
 
     const fetchAvailableQuantity = async (itemCode) => {
         try {
@@ -86,13 +87,14 @@ export default function IssueItems() {
                                 value={selectedItem.itemCode}
                                 onChange={(e) => handleItemChange(index, e.target.value)}
                             >
-                                <option value="">Select an item code</option>
-                                {itemCodes.map((itemCode) => (
-                                    <option key={itemCode} value={itemCode}>
-                                        {itemCode}
+                                <option value="">Select an item</option>
+                                {itemCodes.map((item) => (
+                                    <option key={item.itemCode} value={item.itemCode}>
+                                        {item.itemCode} - {item.itemName}
                                     </option>
                                 ))}
                             </select>
+
                         </label>
                         <p>Available Quantity: {availableQuantities[selectedItem.itemCode] || 0}</p>
                         <label className="block mb-2">
