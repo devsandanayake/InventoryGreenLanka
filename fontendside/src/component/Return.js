@@ -61,7 +61,7 @@ export default function Return() {
         returnApprovedBy,
       };
 
-      const response = await axios.post('http://localhost:8081/return/save', returnData);
+      const response = await axios.post('https://inventorygreenlanka.onrender.com/return/save', returnData);
       if (response.data.success) {
         alert('Return saved successfully');
         fetchReturnItems(); // Fetch updated list of return items
