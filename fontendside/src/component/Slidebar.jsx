@@ -7,7 +7,8 @@ import img from "../img/Borcelle.png"
 import logo from "../img/GLEE_Logo.jpg"
 import {BsTools} from 'react-icons/bs';
 import {FaToolbox} from 'react-icons/fa'
-import {AiFillProfile , AiOutlineHome, AiOutlineLogout} from 'react-icons/ai'
+import Return from './Return';
+import {AiFillBug, AiFillProfile , AiFillReconciliation, AiFillRightCircle, AiOutlineHome, AiOutlineLogout, AiTwotoneSwitcher} from 'react-icons/ai'
 export default function Slidebar({ onLogout }) {
   
   const [activeComponent, setActiveComponent] = useState(null);
@@ -62,9 +63,15 @@ export default function Slidebar({ onLogout }) {
           </div>
         </button>
 
+        <button className="w-60" onClick={() => handleComponentChange('returnItem')}>
+          <div className='flex items-center rounded-md bg-red-600 mt-2'>
+          <div className='flex p-2 text-2xl'><AiFillBug className='mr-3 text-2xl'/>Return Items</div>
+          </div>
+        </button>
+
       
         <button  onClick={onLogout} className='ml-16 mt-16'>
-        <div className='flex items-center rounded-md bg-red-800 mt-2'>
+        <div className='flex items-center rounded-md bg-green-500 mt-2'>
           <div className='flex p-2 font-bold text-2xl'><AiOutlineLogout className='mr-3 text-2xl'/>Logout</div>
           </div>
         </button>
@@ -75,6 +82,7 @@ export default function Slidebar({ onLogout }) {
         {activeComponent === 'tools' && <Tools />}
         {activeComponent === 'mitem' && <Items />}
         {activeComponent === 'project' && <Project />}
+        {activeComponent === 'returnItem' && <Return />}
       </div>
 
       <div className={`p-7 ml-80 ${!activeComponent ? 'block' : 'hidden'}`}> <Home/>

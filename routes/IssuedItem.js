@@ -71,6 +71,41 @@ router.delete('/items/issue/:id', async (req, res) => {
     }
 });
 
+router.put('/updateitems/issue/:id', async (req, res) => {
+    try {
+        const updatedIssuedItem = await Issue.findByIdAndUpdate(
+            req.params.id,
+            {
+                $set: {
+                    itemCode: req.body.itemCode,
+                    qty: req.body.qty,
+                    projectName: req.body.projectName,
+                    issuedDate: req.body.issuedDate,
+                    status: req.body.status
+                }
+            },
+            { new: true }
+        );
+
+        if (!updatedIssuedItem) {
+            return res.status(404).json({
+                success: false,
+                message: 'Issued item not found'
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            updatedIssuedItem: updatedIssuedItem
+        });
+    } catch (err) {
+        return res.status(400).json({
+            error: err.message
+        });
+    }
+});
+
+
 router.get('/items/:itemCode', async (req, res) => {
     try {
         const itemCode = req.params.itemCode;

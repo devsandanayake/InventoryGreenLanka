@@ -23,6 +23,7 @@ export default function Project() {
                                 projectName: issue.projectName,
                                 qty: issue.qty,
                                 issuedDate: issue.issuedDate,
+                                status: issue.status
                              
                             };
                         } else {
@@ -56,6 +57,7 @@ export default function Project() {
                                     <th className='border px-4 py-2 text-2xl'>Item Code</th>
                                     <th className='border px-4 py-2 text-2xl'>Total Quantity</th>
                                     <th className='border px-4 py-2 text-2xl'>Data</th>
+                                    <th className='border px-4 py-2 text-2xl'>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,6 +68,7 @@ export default function Project() {
                                             <td className='border px-4 py-2 text-2xl'>{issue.itemCode}</td>
                                             <td className='border px-4 py-2 text-2xl'>{issue.qty}</td>
                                             <td className='border px-4 py-2 text-2xl'>{issue.issuedDate}</td>
+                                            <td className='border px-4 py-2 text-2xl'>{issue.status}</td>
                                         </tr>
                                     ))
                                 ) : (

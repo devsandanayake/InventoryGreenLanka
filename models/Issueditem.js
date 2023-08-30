@@ -17,6 +17,10 @@ const issuedItemSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    status: {
+        type: String,
+         
+    }
     // You can add more properties as needed
 });
 
