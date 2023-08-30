@@ -19,7 +19,7 @@ export default function Return() {
 
   const fetchingIssuedDetails = async () => {
     try {
-      const IssuedData = await axios.get('http://localhost:8081/issue/show');
+      const IssuedData = await axios.get('https://inventorygreenlanka.onrender.com/issue/show');
       if (IssuedData.data.success) {
         setIssuedDetails(IssuedData.data.issuedItems);
       }
@@ -30,7 +30,7 @@ export default function Return() {
 
   const fetchReturnItems = async () => {
     try {
-      const returnData = await axios.get('http://localhost:8081/return/show');
+      const returnData = await axios.get('https://inventorygreenlanka.onrender.com/return/show');
       if (returnData.data.success) {
         setReturnItems(returnData.data.returnItems);
       }
