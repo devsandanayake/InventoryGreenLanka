@@ -8,7 +8,7 @@ import logo from "../img/GLEE_Logo.jpg"
 import {BsTools} from 'react-icons/bs';
 import {FaToolbox} from 'react-icons/fa'
 import Return from './Return';
-import {AiFillBug, AiFillProfile , AiFillReconciliation, AiFillRightCircle, AiOutlineHome, AiOutlineLogout, AiTwotoneSwitcher} from 'react-icons/ai'
+import {AiFillBug, AiFillProfile ,  AiOutlineHome, AiOutlineLogout} from 'react-icons/ai'
 export default function Slidebar({ onLogout }) {
   
   const [activeComponent, setActiveComponent] = useState(null);
