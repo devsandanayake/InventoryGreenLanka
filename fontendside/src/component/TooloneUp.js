@@ -13,7 +13,7 @@ export default function TooloneUp() {
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:8081/tools/${id}`).then((res) => {
+    axios.get(`https://inventorygreenlanka.onrender.com/tools/${id}`).then((res) => {
       if (res.data.success) {
         setPost(res.data.post);
         setUpdatedPost({
