@@ -14,7 +14,7 @@ export default function Updatetool() {
     const viewTools = () => {
         axios.get('https://inventorygreenlanka.onrender.com/tools').then((res) => {
             if(res.data.success){
-                setTool(res.data.existingTools);
+                setTool(res.data.tools);
                 console.log(tool);
             }
         });
@@ -24,7 +24,7 @@ export default function Updatetool() {
   
   //delete function
   const Tooldelete = (id)=>{
-    axios.delete(`https://inventorygreenlanka.onrender.com/tool/delete/${id}`).then((res)=>{
+    axios.delete(`https://inventorygreenlanka.onrender.com/tools/delete/${id}`).then((res)=>{
       alert("Deleted");
       viewTools();
     })

@@ -68,7 +68,7 @@ router.put('/tools/update/:id', async (req, res) => {
         );
         return res.status(200).json({
             success: true,
-            updatedTool
+            updatedTool: updatedTool
         });
     } catch (err) {
         return res.status(400).json({

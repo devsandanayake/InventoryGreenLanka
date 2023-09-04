@@ -44,7 +44,7 @@ export default function TooloneUp() {
       qty: updatedPost.qty,
     };
 
-    axios.put(`https://inventorygreenlanka.onrender.com/tool/update/${id}`, data).then((res) => {
+    axios.put(`https://inventorygreenlanka.onrender.com/tools/update/${id}`, data).then((res) => {
       console.log(res.data);
       alert('Post updated successfully!');
       setUpdatedPost({
