@@ -78,7 +78,7 @@ router.get('/tools/:toolCode', async (req, res) => {
         
         return res.status(200).json({
             success: true,
-            tools: tool
+            tool: tool
         });
     } catch (err) {
         return res.status(400).json({
