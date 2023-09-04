@@ -37,6 +37,7 @@ export default function IssueTools() {
             console.error('Error fetching available quantity:', error);
         }
     };
+    
 
     const handleAddTool = () => {
         setSelectedTools([...selectedTools, { toolCode: '', quantity: 0 }]);

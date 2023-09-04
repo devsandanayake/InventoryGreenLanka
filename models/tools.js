@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
 const toolSchema = new mongoose.Schema({
+     
     toolCode: {
         type: String,
         required: true,
+      
     },
     toolName: {
         type: String,
@@ -21,4 +23,4 @@ const toolSchema = new mongoose.Schema({
     }
 });
 
-module.exports = mongoose.model('tool', toolSchema);
+module.exports = mongoose.model('Tool', toolSchema);

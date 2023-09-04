@@ -67,25 +67,34 @@ router.post('/tools/issue', async (req, res) => {
 router.get('/tools/:toolCode', async (req, res) => {
     try {
         const toolCode = req.params.toolCode;
+
+        console.log('Received request for toolCode:', toolCode);
+
         const tool = await Tool.findOne({ toolCode: toolCode }).exec();
-        
+
         if (!tool) {
+            console.log('Tool not found for toolCode:', toolCode);
             return res.status(404).json({
                 success: false,
                 message: 'Item not found'
             });
         }
-        
+
+        console.log('Found tool:', tool);
+
         return res.status(200).json({
             success: true,
             tool: tool
         });
     } catch (err) {
+        console.error('Error:', err);
+
         return res.status(400).json({
             error: err.message
         });
     }
 });
+
 
 router.get('/issue/tool', async (req, res) => {
     try {
