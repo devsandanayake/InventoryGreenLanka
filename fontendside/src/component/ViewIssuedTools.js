@@ -1,3 +1,5 @@
+// In your ViewIssuedTools.js component
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -20,6 +22,23 @@ export default function ViewIssuedTools() {
         }
     };
 
+    const handleReturnTool = async (toolId) => {
+        try {
+            // Make a request to your server to handle tool return using the toolId
+            // You should implement the server-side logic for returning tools.
+            // For example:
+            const response = await axios.post(`https://inventorygreenlanka.onrender.com/tools/return/${toolId}`);
+            if (response.data.success) {
+                // Handle success, update UI as needed
+                alert('Tool returned successfully.');
+                // You might want to fetch the updated issued tools list here.
+                fetchIssuedTools();
+            }
+        } catch (error) {
+            console.error('Error returning tool:', error);
+        }
+    };
+
     return (
         <div className="container mx-auto mt-10">
             <h2 className="text-2xl font-semibold mb-4">View Issued Tools</h2>
@@ -30,6 +49,7 @@ export default function ViewIssuedTools() {
                         <th className="px-4 py-2">Quantity</th>
                         <th className="px-4 py-2">Person Name</th>
                         <th className="px-4 py-2">Issued Date</th>
+                        <th className="px-4 py-2">Actions</th> {/* Add Actions column */}
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +59,14 @@ export default function ViewIssuedTools() {
                             <td className="border px-4 py-2">{tool.qty}</td>
                             <td className="border px-4 py-2">{tool.personName}</td>
                             <td className="border px-4 py-2">{tool.issuedDate}</td>
+                            <td className="border px-4 py-2">
+                                <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    onClick={() => handleReturnTool(tool._id)} // Pass tool ID
+                                >
+                                    Return Tool
+                                </button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

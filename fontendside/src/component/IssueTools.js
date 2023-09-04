@@ -29,7 +29,7 @@ export default function IssueTools() {
             const response = await axios.get(`https://inventorygreenlanka.onrender.com/tools/${toolCode}`);
             if (response.data.success) {
                 const newAvailableQuantities = { ...availableQuantities };
-                newAvailableQuantities[toolCode] = response.data.tool.qty;
+                newAvailableQuantities[toolCode] = response.data.tools.qty;
                 setAvailableQuantities(newAvailableQuantities);
             }
         } catch (error) {

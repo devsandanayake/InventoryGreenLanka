@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 
 const issuedToolsSchema = new mongoose.Schema({
+   toolId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Tools',
+        required: true
+    },
     toolCode: {
         type: String,
         required: true
