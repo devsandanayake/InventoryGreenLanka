@@ -15,12 +15,14 @@ export default function ViewIssuedTools() {
             const response = await axios.get('https://inventorygreenlanka.onrender.com/issue/tool');
             if (response.data.success) {
                 const tools = response.data.tools;
+                console.log('Received tools:', tools); // Add this line to check if data is received
                 setIssuedTools(tools);
             }
         } catch (error) {
             console.error('Error fetching issued tools:', error);
         }
     };
+    
 
     const handleReturnTool = async (toolId) => {
         try {

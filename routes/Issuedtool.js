@@ -16,7 +16,8 @@ router.post('/tools/issue', async (req, res) => {
     });
 }
         for (const tool of toolToIssue) {
-            const { toolCode, qty, personName, issuedDate } = tool;
+            const { toolCode, qty, personName,project, issuedDate } = tool;
+            
 
             // Find the tool by toolCode
             const existingTool = await Tool.findOne({ toolCode: toolCode });

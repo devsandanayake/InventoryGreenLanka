@@ -22,7 +22,7 @@ const issuedToolsSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    
+
     issuedDate: {
         type: Date,
         required: true
