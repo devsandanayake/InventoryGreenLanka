@@ -4,6 +4,7 @@ import axios from 'axios';
 export default function IssueTools() {
     const [selectedTools, setSelectedTools] = useState([]);
     const [personName, setPersonName] = useState('');
+    const [project, setProject] = useState('');
     const [toolCodes, setToolCodes] = useState([]);
     const [issuedDate, setIssuedDate] = useState('');
     const [availableQuantities, setAvailableQuantities] = useState({});
@@ -59,6 +60,7 @@ export default function IssueTools() {
             toolCode: tool.toolCode,
             qty: tool.quantity,
             personName: personName,
+            project: project,
             issuedDate: issuedDate,
         }));
 
@@ -70,6 +72,7 @@ export default function IssueTools() {
                 setSelectedTools([]);
                 setPersonName('');
                 setIssuedDate('');
+                setProject('');
             }
         } catch (error) {
             console.error('Error issuing tools:', error);
@@ -123,6 +126,15 @@ export default function IssueTools() {
                         type="text"
                         value={personName}
                         onChange={(e) => setPersonName(e.target.value)}
+                    />
+                </label>
+                <label className="block mb-4">
+                    Project Name:
+                    <input
+                        className="w-full my-input"
+                        type="text"
+                        value={project}
+                        onChange={(e) => setProject(e.target.value)}
                     />
                 </label>
                 <label className="block mb-4">

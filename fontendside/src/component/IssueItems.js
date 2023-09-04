@@ -68,6 +68,14 @@ export default function IssueItems() {
             if (response.data.success) {
                 alert('Items issued successfully');
                 // Clear selectedItems array or perform any other necessary action
+                setSelectedItems([]);
+                setProjectName('');
+                setItemCodes([]);
+                setIssuedDate('');
+                
+
+
+
             }
         } catch (error) {
             console.error('Error issuing items:', error);
