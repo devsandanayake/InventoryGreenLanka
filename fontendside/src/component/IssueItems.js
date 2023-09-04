@@ -72,7 +72,7 @@ export default function IssueItems() {
                 setProjectName('');
                 setItemCodes([]);
                 setIssuedDate('');
-                
+
 
 
 
@@ -83,64 +83,67 @@ export default function IssueItems() {
     };
     
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="max-w-md w-full p-6 bg-white rounded shadow-md">
-                <h2 className="text-xl font-semibold mb-4">Issue Items for Project</h2>
+        <div className="container justify-center items-center h-screen ml-80 mt-32">
+            <div className="max-w-md w-full p-6 bg-blue-400 rounded shadow-md">
+                <h2 className="text-xl font-semibold mb-4">Issue Move Items for Project</h2>
                 {selectedItems.map((selectedItem, index) => (
-                    <div key={index}>
-                        <label className="block mb-2">
-                            Item Code:
-                            <select
-                                className="w-full my-input"
-                                value={selectedItem.itemCode}
-                                onChange={(e) => handleItemChange(index, e.target.value)}
-                            >
-                                <option value="">Select an item</option>
-                                {itemCodes.map((item) => (
-                                    <option key={item.itemCode} value={item.itemCode}>
-                                        {item.itemCode} - {item.itemName}
-                                    </option>
-                                ))}
-                            </select>
-
-                        </label>
-                        <p>Available Quantity: {availableQuantities[selectedItem.itemCode] || 0}</p>
-                        <label className="block mb-2">
-                            Quantity:
-                            <input
-                                className="w-full my-input"
-                                type="number"
-                                value={selectedItem.quantity}
-                                onChange={(e) => handleQuantityChange(index, e.target.value)}
-                            />
-                        </label>
-                    </div>
+             <div key={index} className="mb-4 p-4 border rounded shadow">
+             <label className="block mb-2">
+                 Item Code:
+                 <select
+                     className="w-full my-input p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                     value={selectedItem.itemCode}
+                     onChange={(e) => handleItemChange(index, e.target.value)}
+                 >
+                     <option value="">Select an item</option>
+                     {itemCodes.map((item) => (
+                         <option key={item.itemCode} value={item.itemCode}>
+                             {item.itemCode} - {item.itemName}
+                         </option>
+                     ))}
+                 </select>
+             </label>
+             <p className="text-gray-600">Available Quantity: {availableQuantities[selectedItem.itemCode] || 0}</p>
+             <label className="block mt-2">
+                 Quantity:
+                 <input
+                     className="w-full my-input p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                     type="number"
+                     value={selectedItem.quantity}
+                     onChange={(e) => handleQuantityChange(index, e.target.value)}
+                 />
+             </label>
+         </div>
+         
                 ))}
-                <button className="w-full my-button mb-2" onClick={handleAddItem}>
-                    Add Item
-                </button>
-                <label className="block mb-4">
-                    Project Name:
-                    <input
-                        className="w-full my-input"
-                        type="text"
-                        value={projectName}
-                        onChange={(e) => setProjectName(e.target.value)}
-                    />
-                </label>
-                <label className="block mb-4">
-                    Issued Date:
-                    <input
+                <button className="w-full bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded mb-2" onClick={handleAddItem}>
+    Add Item
+</button>
 
-                        className="w-full my-input"
-                        type="date"
-                        value={issuedDate}
-                        onChange={(e) => setIssuedDate(e.target.value)}
-                    />
-                </label>
-                <button className="w-full my-button" onClick={handleIssue}>
-                    Issue Items
-                </button>
+<label className="block mb-4 font-semibold">
+    Project Name:
+    <input
+        className="w-full bg-gray-200 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-blue-500"
+        type="text"
+        value={projectName}
+        onChange={(e) => setProjectName(e.target.value)}
+    />
+</label>
+
+<label className="block mb-4">
+    Issued Date:
+    <input
+        className="w-full bg-gray-200 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-blue-500"
+        type="date"
+        value={issuedDate}
+        onChange={(e) => setIssuedDate(e.target.value)}
+    />
+</label>
+
+<button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+    Issue Items
+</button>
+
             </div>
         </div>
     );

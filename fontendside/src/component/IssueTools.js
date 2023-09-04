@@ -80,16 +80,16 @@ export default function IssueTools() {
     };
 
     return (
-        <div className="flex justify-center items-center h-screen">
-            <div className="max-w-md w-full p-6 bg-white rounded shadow-md">
+        <div className="ml-96 mt-32 justify-center items-center h-screen">
+            <div className="max-w-md w-full p-6 bg-red-300 rounded shadow-md animate__animated animate__fadeIn">
                 <h2 className="text-xl font-semibold mb-4">Issue Tools</h2>
                 {toolCodes && toolCodes.length > 0 ? (
                     selectedTools.map((selectedTool, index) => (
-                        <div key={index}>
+                        <div key={index} className='mb-4 p-4 border rounded shadow'>
                             <label className="block mb-2">
                                 Tool Code:
                                 <select
-                                    className="w-full my-input"
+                                    className="w-full my-input p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                                     value={selectedTool.toolCode}
                                     onChange={(e) => handleToolChange(index, e.target.value)}
                                 >
@@ -105,7 +105,7 @@ export default function IssueTools() {
                             <label className="block mb-2">
                                 Quantity:
                                 <input
-                                    className="w-full my-input"
+                                    className="w-full my-input p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                                     type="number"
                                     value={selectedTool.quantity}
                                     onChange={(e) => handleQuantityChange(index, e.target.value)}
@@ -116,13 +116,13 @@ export default function IssueTools() {
                 ) : (
                     <p>No tools available.</p>
                 )}
-                <button className="w-full my-button mb-2" onClick={handleAddTool}>
+                <button className="w-full bg-yellow-600 hover:bg-yellow-700 text-white py-2 px-4 rounded mb-2" onClick={handleAddTool}>
                     Add Tool
                 </button>
                 <label className="block mb-4">
                     Person Name:
                     <input
-                        className="w-full my-input"
+                        className="w-full bg-gray-200 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-blue-500"
                         type="text"
                         value={personName}
                         onChange={(e) => setPersonName(e.target.value)}
@@ -131,7 +131,7 @@ export default function IssueTools() {
                 <label className="block mb-4">
                     Project Name:
                     <input
-                        className="w-full my-input"
+                        className="w-full bg-gray-200 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-blue-500"
                         type="text"
                         value={project}
                         onChange={(e) => setProject(e.target.value)}
@@ -140,13 +140,13 @@ export default function IssueTools() {
                 <label className="block mb-4">
                     Issued Date:
                     <input
-                        className="w-full my-input"
+                        className="w-full bg-gray-200 border border-gray-300 rounded py-2 px-4 focus:outline-none focus:bg-white focus:border-blue-500"
                         type="date"
                         value={issuedDate}
                         onChange={(e) => setIssuedDate(e.target.value)}
                     />
                 </label>
-                <button className="w-full my-button" onClick={handleIssue}>
+                <button className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={handleIssue}>
                     Issue Tools
                 </button>
             </div>
