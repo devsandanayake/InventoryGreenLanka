@@ -92,6 +92,29 @@ router.get('/tools/:id', async (req, res) => {
     }
 });
 
+router.get('/tools/:toolCode', async (req, res) => {
+    try {
+        const toolCode = req.params.toolCode;
+        const tool = await Tool.findOne({ toolCode: toolCode }).exec();
+
+        if (!tool) {
+            return res.status(404).json({
+                success: false,
+                message: 'Tool not found'
+            });
+        }
+
+        return res.status(200).json({
+            success: true,
+            tool: tool
+        });
+    } catch (err) {
+        return res.status(400).json({
+            error: err.message
+        });
+    }
+});
+
 
 
 

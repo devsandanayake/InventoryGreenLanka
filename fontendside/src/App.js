@@ -7,6 +7,7 @@ import MoveUp from './component/MoveUp';
 import IssueItems from './component/IssueItems';
 import Updatemove from './component/Updatemoveitems';
 import LoginPage from './component/Login';
+import Issuetools from './component/Issuedtool';
 
 export default function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -43,6 +44,7 @@ export default function App() {
               <Route path="/TooloneUp/:id" element={<Tooloneup />} />
               <Route path="/IssueItems" element={<IssueItems />} />
               <Route path="/MoveUp/:id" element={<MoveUp />} />
+              <Route path="/M" element={<Issuetools />} />
             </>
           ) : (
             <Route path="/" element={<LoginPage onLogin={handleLogin} />} />
