@@ -45,6 +45,7 @@ router.post('/tools/issue', async (req, res) => {
                 toolId: existingTool._id,
                 toolCode: toolCode,
                 qty: qty,
+                project:project,
                 personName: personName,
                 issuedDate: issuedDate
             });
