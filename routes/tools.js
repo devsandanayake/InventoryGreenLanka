@@ -77,16 +77,17 @@ router.put('/tools/update/:id', async (req, res) => {
     }
 });
 
+// Route to get a tool by ID
 router.get('/tools/:id', async (req, res) => {
     try {
         const tool = await Tool.findById(req.params.id).exec();
         return res.status(200).json({
             success: true,
-            tool: tool
+            post: tool
         });
     } catch (err) {
         return res.status(400).json({
-            error: err.message
+            error: err
         });
     }
 });
