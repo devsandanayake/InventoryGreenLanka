@@ -13,6 +13,7 @@ const item = require("./routes/Items");
 const tool = require("./routes/tools");
 const issued = require("./routes/IssuedItem");
 const ReturnItem = require("./routes/return")
+const IssuedTool = require("./routes/Issuedtool")
  
  
 
@@ -47,6 +48,7 @@ app.use(item);
 app.use(tool);
 app.use(issued);
 app.use(ReturnItem);
+app.use(IssuedTool);
  
  
 

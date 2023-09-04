@@ -84,6 +84,21 @@ export default function Tool() {
             >
             Stock Update</Link>
           </button>
+
+          <button>
+              <Link
+              to='/M' // Navigate to the StockUpdate component
+              className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+            >
+            Issue Tools</Link>
+          </button>
+          <button>
+              <Link
+              to='/View' // Navigate to the StockUpdate component
+              className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
+            >
+            View Issue Tools details</Link>
+          </button>
         </div>
         <div className='mt-5'>
         <table className="table-auto w-full border border-gray-300">
@@ -148,7 +163,7 @@ export default function Tool() {
               name='toolName'
             />
             <input
-              type='text'
+              type='Number'
               placeholder='Tool Quantity'
               value={formData.qty}
               onChange={handleInputChange}

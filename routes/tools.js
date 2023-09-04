@@ -3,9 +3,9 @@ const router = express.Router();
 
 const Tool = require('../models/tools'); // Make sure your model name matches
 
-router.post('/tools/save', async (req, res) => { // Added a leading slash before 'tools/save'
+router.post('/tools/save', async (req, res) => {
     try {
-        const newTool = new Tool({ // Use 'new Tool' instead of 'new tool'
+        const newTool = new Tool({
             toolCode: req.body.toolCode,
             toolName: req.body.toolName,
             qty: req.body.qty
@@ -15,11 +15,12 @@ router.post('/tools/save', async (req, res) => { // Added a leading slash before
         const savedTool = await newTool.save();
 
         return res.status(200).json({
-            success: "Tool saved successfully"
+            success: true,
+            message: "Tool saved successfully"
         });
     } catch (err) {
         return res.status(400).json({
-            error: err
+            error: err.message
         });
     }
 });
@@ -29,16 +30,16 @@ router.get('/tools', async (req, res) => {
         const tools = await Tool.find().exec();
         return res.status(200).json({
             success: true,
-            existingTools: tools
+            tools: tools
         });
     } catch (err) {
         return res.status(400).json({
-            error: err
+            error: err.message
         });
     }
 });
 
-router.delete('/tool/delete/:id', async (req, res) => {
+router.delete('/tools/delete/:id', async (req, res) => {
     try {
         const deletedTool = await Tool.findByIdAndRemove(req.params.id).exec();
         return res.status(200).json({
@@ -47,13 +48,12 @@ router.delete('/tool/delete/:id', async (req, res) => {
         });
     } catch (err) {
         return res.status(400).json({
-            error: err
+            error: err.message
         });
     }
-  });
+});
 
-
-router.put('/tool/update/:id', async (req, res) => {
+router.put('/tools/update/:id', async (req, res) => {
     try {
         const updatedTool = await Tool.findByIdAndUpdate(
             req.params.id,
@@ -69,11 +69,10 @@ router.put('/tool/update/:id', async (req, res) => {
         return res.status(200).json({
             success: true,
             updatedTool
-            
         });
     } catch (err) {
         return res.status(400).json({
-            error: err
+            error: err.message
         });
     }
 });
@@ -81,29 +80,6 @@ router.put('/tool/update/:id', async (req, res) => {
 router.get('/tools/:id', async (req, res) => {
     try {
         const tool = await Tool.findById(req.params.id).exec();
-        return res.status(200).json({
-            success: true,
-            post: tool
-        });
-    } catch (err) {
-        return res.status(400).json({
-            error: err
-        });
-    }
-});
-
-router.get('/tools/:toolCode', async (req, res) => {
-    try {
-        const toolCode = req.params.toolCode;
-        const tool = await Tool.findOne({ toolCode: toolCode }).exec();
-
-        if (!tool) {
-            return res.status(404).json({
-                success: false,
-                message: 'Tool not found'
-            });
-        }
-
         return res.status(200).json({
             success: true,
             tool: tool
@@ -114,7 +90,6 @@ router.get('/tools/:toolCode', async (req, res) => {
         });
     }
 });
-
 
 
 
