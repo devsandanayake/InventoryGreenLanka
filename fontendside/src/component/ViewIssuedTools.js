@@ -50,6 +50,7 @@ export default function ViewIssuedTools() {
                         <th className="px-4 py-2">Tool Code</th>
                         <th className="px-4 py-2">Quantity</th>
                         <th className="px-4 py-2">Person Name</th>
+                        <th className="px-4 py-2">Project Name</th>
                         <th className="px-4 py-2">Issued Date</th>
                         <th className="px-4 py-2">Actions</th> {/* Add Actions column */}
                     </tr>
@@ -60,6 +61,7 @@ export default function ViewIssuedTools() {
                             <td className="border px-4 py-2">{tool.toolCode}</td>
                             <td className="border px-4 py-2">{tool.qty}</td>
                             <td className="border px-4 py-2">{tool.personName}</td>
+                            <td className="border px-4 py-2">{tool.project}</td>
                             <td className="border px-4 py-2">{tool.issuedDate}</td>
                             <td className="border px-4 py-2">
                                 <button
