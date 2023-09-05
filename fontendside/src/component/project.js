@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { TiTick } from 'react-icons/ti';
 
 export default function Project() {
     const [issueItems, setIssueItems] = useState([]);
@@ -68,7 +69,7 @@ export default function Project() {
                                             <td className='border px-4 py-2 text-2xl'>{issue.itemCode}</td>
                                             <td className='border px-4 py-2 text-2xl'>{issue.qty}</td>
                                             <td className='border px-4 py-2 text-2xl'>{issue.issuedDate}</td>
-                                            <td className='border px-4 py-2 text-2xl'>{issue.status}</td>
+                                            {issue.status === 'Returned' ? (<td className='border px-4 py-2 text-2xl bg-red-600'>Returned</td>) : (<td className='border px-4 py-2 text-2xl'><TiTick className='bg-green-500 text-4xl text-center'/></td>)}
                                         </tr>
                                     ))
                                 ) : (

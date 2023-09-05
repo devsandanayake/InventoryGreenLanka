@@ -76,8 +76,8 @@ export default function Return() {
 
   return (
     <>
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-xl font-semibold mb-4">Return Form</h2>
+    <div className="max-w-md mx-auto p-6 bg-green-300 shadow-md rounded-lg">
+      <h2 className="text-3xl font-semibold mb-4">Return Form</h2>
       <form onSubmit={handelReturn}>
         <div className="mb-4">
           <label htmlFor="issuedDetails" className="block font-medium mb-1">
@@ -143,7 +143,7 @@ export default function Return() {
         
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+          className="bg-red-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
         >
           Submit
         </button>
@@ -152,10 +152,10 @@ export default function Return() {
      
     </div>
      <div className="mt-6">
-     <h2 className="text-xl font-semibold mb-2">Return Items</h2>
+     <h2 className="text-3xl font-semibold mb-2 text-center">Return Items</h2>
      <table className="w-full border-collapse border">
        <thead>
-         <tr className="bg-gray-100">
+         <tr className="bg-red-100">
            <th className="border p-2">Return Item</th>
            <th className="border p-2">Return Qty</th>
            <th className="border p-2">Return Reason</th>

@@ -84,13 +84,13 @@ export default function Mtems() {
             >
             Stock Update</Link>
           </button>
-          <button>
+          {/* <button>
               <Link
               to='/IssueItems' // Navigate to the StockUpdate component
               className='bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded'
             >
             Issue Items</Link>
-          </button>
+          </button> */}
         </div>
         <div className='mt-5'>
         <table className="table-auto w-full border-2">

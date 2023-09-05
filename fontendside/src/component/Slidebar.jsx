@@ -8,6 +8,9 @@ import logo from "../img/GLEE_Logo.jpg"
 import {BsTools} from 'react-icons/bs';
 import {FaToolbox} from 'react-icons/fa'
 import Return from './Return';
+import IssueTool from "./IssueTools"
+import ViewIssue from "./ViewIssuedTools"
+import IssueItems from "./IssueItems"
 import {AiFillBug, AiFillProfile ,  AiOutlineHome, AiOutlineLogout} from 'react-icons/ai'
 export default function Slidebar({ onLogout }) {
   
@@ -24,7 +27,7 @@ export default function Slidebar({ onLogout }) {
   return (
     <div className='flex'>
       <div
-        className="bg-black h-screen p-5 pt-8 w-72 fixed"
+        className="bg-black h-screen p-5 pt-8 w-72 fixed top-0 left-0 overflow-y-auto "
       >
         
 
@@ -51,9 +54,27 @@ export default function Slidebar({ onLogout }) {
           </div>
         </button>
 
+        <button className="w-44 ml-14" onClick={() => handleComponentChange('issuetools')}>
+          <div className='flex items-center rounded-md bg-blue-400 mt-2'>
+            <div className="flex p-2 text-sm font-extrabold"><BsTools className='mr-3'/>Issue Tools</div>
+          </div>
+        </button>
+
+        <button className="w-44 ml-14 mb-10" onClick={() => handleComponentChange('viewissuetools')}>
+          <div className='flex items-center rounded-md bg-blue-400 mt-2'>
+            <div className="flex p-2 text-sm font-extrabold"><BsTools className='mr-3 '/>View Issue Details</div>
+          </div>
+        </button>
+
         <button className="w-60" onClick={() => handleComponentChange('mitem')}>
           <div className='flex items-center rounded-md bg-green-800 mt-2'>
             <div className='flex p-2 text-2xl'><FaToolbox className='mr-3 text-2xl'/>Move Items</div>
+          </div>
+        </button>
+
+        <button className="w-44 ml-14 mb-10" onClick={() => handleComponentChange('issueitems')}>
+          <div className='flex items-center rounded-md bg-green-400 mt-2'>
+            <div className="flex p-2 text-sm font-extrabold"><FaToolbox className='mr-3'/>Issue Items</div>
           </div>
         </button>
 
@@ -80,7 +101,10 @@ export default function Slidebar({ onLogout }) {
 
       <div className={` p-9 ml-80 ${activeComponent ? 'block' : 'hidden'}`}>
         {activeComponent === 'tools' && <Tools />}
+        {activeComponent === 'issuetools' && <IssueTool />}
+        {activeComponent === 'viewissuetools' && <ViewIssue />}
         {activeComponent === 'mitem' && <Items />}
+        {activeComponent === 'issueitems' && <IssueItems />}
         {activeComponent === 'project' && <Project />}
         {activeComponent === 'returnItem' && <Return />}
       </div>
